@@ -1,13 +1,13 @@
 @extends('theme.front.app')
 
 @section('content')
-<div class="container mx-auto py-2 my-4 px-2">
+<div class="container mx-auto py-2 my-4 px-20">
     <div class="md:flex">
         <div class="md:w-3/4 md:pr-2">
             @foreach($posts as $item)
             <div class="w-full lg:flex mb-3">
                 <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-                    style="background-image: url('https://tailwindcss.com/img/card-left.jpg')"
+                    style="background-image: url('{{optional($item->media)->link() ?? getImage()}}')"
                     title="Woman holding a mug">
                 </div>
                 <div
@@ -29,11 +29,11 @@
                         </p>
                     </div>
                     <div class="flex items-center">
-                        <img class="w-10 h-10 rounded-full mr-4" src="https://tailwindcss.com/img/jonathan.jpg"
+                        <img class="w-10 h-10 rounded-full mr-4" src="{{url('/img/profile.jpg')}}"
                             alt="Avatar of Jonathan Reinink">
                         <div class="text-sm">
-                            <p class="text-black leading-none">Jonathan Reinink</p>
-                            <p class="text-grey-dark">Aug 18</p>
+                            <p class="text-black leading-none">Root User</p>
+                            <p class="text-grey-dark">{{$item->created_at->format('M d, Y')}}</p>
                         </div>
                     </div>
                 </div>

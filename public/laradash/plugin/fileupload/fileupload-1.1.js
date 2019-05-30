@@ -50,22 +50,22 @@
 			view.init(env);
 		},
 		setSelected: function (id, clicked) {
-			// TODO upgrade this performance 
+			// TODO upgrade this performance
 			// COntains bug on clicked.inputId
 			$('input[name=' + clicked.input + ']').val(model.getSelected(id).ImgId);
 
-			$('#' + clicked.imageId).html('<img src="' + model.getSelected(id).ImgSrc + '" class="img-fluid w-100">');			// 
+			$('#' + clicked.imageId).html('<img src="' + model.getSelected(id).ImgSrc + '" class="img-fluid w-100">');			//
 			return true;
 		},
 
 
 		/**
 		 * Adding Local File to the list, We set a type=local to identify this file is local
-		 * 
+		 *
 		 * @param data
 		 * @param url
 		 * @param src
-		 * @param env 
+		 * @param env
 		 */
 		addFile: function (data, url, src, env) {
 			var tempId = currentId;
@@ -82,7 +82,7 @@
 
 		/**
 		 * We download the files(path) from the url that is set on env
-		 * 
+		 *
 		 * @returns array of  data
 		 */
 		getServerFileFromModel: function () {
@@ -96,7 +96,7 @@
 
 		/**
 		 * This function is called when files lists are downloaded from the server
-		 * 
+		 *
 		 * @returns void
 		 */
 		addMultipleFiles: function (data, env) {
@@ -113,10 +113,10 @@
 		},
 
 		/**
-		 * 
-		 * @param {*} src 
-		 * @param {*} env 
-		 * @param {*} currentId 
+		 *
+		 * @param {*} src
+		 * @param {*} env
+		 * @param {*} currentId
 		 */
 		updateSrc(src, env, currentId) {
 			model.update(currentId, src);
@@ -265,7 +265,7 @@
 
 
 		/**
-		 * Initialization of all local files to 
+		 * Initialization of all local files to
 		 */
 		localInit: function (type = 'local') {
 

@@ -4,8 +4,8 @@
 <section class="py-5 my-4 ">
     <div class="container">
         <div class="mx-auto w-3/4">
-            <a href="https://loremflickr.com/640/480/all?random=91">
-                <img src="https://loremflickr.com/640/480/all?random=91" class="img-fluid w-full">
+            <a href="{{optional($post->media)->link('big') ?? getImage()}}">
+                <img src="{{optional($post->media)->link('big') ?? getImage()}}" class="img-fluid w-full">
             </a>
             <hr>
             <div class="flex items-center">
@@ -30,9 +30,7 @@
                 </span>
             </div>
             <hr>
-            Eligendi dolor consequuntur modi natus aut at ut. Neque minima quidem sit cumque quis. Minima optio
-            laborum
-            sit rerum ut. Quia placeat optio accusantium in magni quas nemo.
+            {!! $post->body !!}
         </div>
     </div>
 </section>

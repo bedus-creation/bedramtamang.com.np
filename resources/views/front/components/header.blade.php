@@ -1,5 +1,5 @@
 <div class="bg-white md:shadow-outline">
-    <div class="container mx-auto px-2">
+    <div class="container mx-auto px-20">
         <div class="flex justify-between font-semibold whitespace-no-wrap overflow-x-auto overflow-y-hidden py-2">
             <a href="{{url('/')}}" class="">
                 <div class="hidden md:flex items-center">

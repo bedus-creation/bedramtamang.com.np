@@ -11,7 +11,7 @@ class Post extends Model
 {
     use HasCategory, HasTag;
 
-    protected $fillable = ["title", "slug", "body", "user_id"];
+    protected $fillable = ["title", "slug", "body", "user_id", "media_id"];
 
     public function frontUrl()
     {

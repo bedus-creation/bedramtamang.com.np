@@ -19,18 +19,18 @@
             </div>
         </div>
         <div class="card-body">
-            <form  method ="POST" action="{{url(config('laradash.base_route').'/posts')}}" >
+            <form method="POST" action="{{url(config('laradash.base_route').'/posts')}}">
                 @csrf
-                <div class="row" >
+                <div class="row">
                     <div class="col-md-10">
-                        <div class = "row">
-                            <div class = "col-md-10 offset-md-2">
+                        <div class="row">
+                            <div class="col-md-10 offset-md-2">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-form-label col-lg-2">Title</label>
                             <div class="col-lg-10">
-                                <input id = "title" type="text" name = "title"class="form-control" required autofocus>
+                                <input id="title" type="text" name="title" class="form-control" required autofocus>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -39,7 +39,7 @@
                                 <select name="categories[]" id="categories-input" multiple class="form-control">
                                     <option selected>Select Categories</option>
                                 </select>
-                            </div>                                
+                            </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-form-label col-lg-2">Content</label>
@@ -52,7 +52,8 @@
                                 Cover Image
                             </label>
                             <div class="col-md-10">
-                                <div id="cover" class="w-100 btn btn-secondary">Set Cover Image</div>
+                                <div id="cover" class="w-100 btn btn-secondary" input-field="media_id">Set Cover Image
+                                </div>
                                 <div id="cover-image"></div>
                             </div>
                         </div>
@@ -62,7 +63,7 @@
                                 <select name="tags[]" id="tags-input" multiple class="form-control">
                                     <option selected>Select Tags</option>
                                 </select>
-                            </div>                                
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -89,54 +90,58 @@
         tabsize: 2,
         height: 200
     });
+    $('#cover').fileupload({
+        serverUploadUrl: "{{url('admin/medias')}}",
+        serverAllFileUrl: "{{url('admin/medias')}}"
+    });
 
-$('#cover').fileupload({
-    serverUploadUrl:'{{url('admin/medias')}}',
-    serverAllFileUrl:'{{url('admin/medias')}}'
-});
-
-$('#tags-input').select2({
-    ajax:{
-        url: '/tags',
-        dataType: 'json',
-        delay:1000,
-        data: function (params) {
-            return {q: params.term}
-        },
-        processResults: function (data) {
-            return {
-                results: data.results.map(function(item){
-                    return {
-                        id: item.text,
-                        text: item.text
-                    };
-                })
+    $('#tags-input').select2({
+        ajax: {
+            url: '/tags',
+            dataType: 'json',
+            delay: 1000,
+            data: function (params) {
+                return {
+                    q: params.term
+                }
+            },
+            processResults: function (data) {
+                return {
+                    results: data.results.map(function (item) {
+                        return {
+                            id: item.text,
+                            text: item.text
+                        };
+                    })
+                }
             }
-        }
-    },
-    tags:true
-});
-
-$('#categories-input').select2({
-    ajax:{
-        url: '/tags',
-        dataType: 'json',
-        delay:1000,
-        data: function (params) {
-            return {q: params.term}
         },
-        processResults: function (data) {
-            return {
-                results: data.results.map(function(item){
-                    return {
-                        id: item.text,
-                        text: item.text
-                    };
-                })
+        tags: true
+    });
+
+    $('#categories-input').select2({
+        ajax: {
+            url: '/tags',
+            dataType: 'json',
+            delay: 1000,
+            data: function (params) {
+                return {
+                    q: params.term
+                }
+            },
+            processResults: function (data) {
+                return {
+                    results: data.results.map(function (item) {
+                        return {
+                            id: item.text,
+                            text: item.text
+                        };
+                    })
+                }
             }
-        }
-    },
-    tags:true
-});
+        },
+        tags: true
+    });
+
 </script>
 @endsection
