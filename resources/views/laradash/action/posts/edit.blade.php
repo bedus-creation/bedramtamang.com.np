@@ -50,10 +50,10 @@
                                 Cover Image
                             </label>
                             <div class="col-md-10">
-                                <div id="cover" data-value="{{$post->media->id}}" input-field="media_id"
+                                <div id="cover" data-value="{{optional($post->media)->id}}" input-field="media_id"
                                     class="w-100 btn btn-secondary">Set Cover Image</div>
                                 <span id="cover-image">
-                                    <img src="{{$post->media->link()}}" class="img-fluid w-100">
+                                    <img src="{{optional($post->media)->link()}}" class="img-fluid w-100">
                                 </span>
                             </div>
                         </div>
