@@ -13,7 +13,7 @@
                 <div
                     class="bg-white w-full rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
                     <div class="mb-8">
-                        <p class="text-sm text-grey-dark flex items-center">
+                        <p class="text-sm text-gray-600  flex items-center">
                             <svg class="fill-current text-grey w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20">
                                 <path
@@ -21,10 +21,10 @@
                             </svg>
                             Members only
                         </p>
-                        <div class="text-black font-bold text-xl mb-2">
+                        <div class="text-gray-900  font-bold text-xl mb-2">
                             <a href="{{$item->frontUrl()}}">{{$item->title}}</a>
                         </div>
-                        <p class="text text-base">
+                        <p class="text-gray-700 text-base">
                             {{str_limit(strip_tags($item->body),200)}}
                         </p>
                     </div>
@@ -41,17 +41,21 @@
             @endforeach
         </div>
         <div class="md:w-1/4 bg-white pr-2">
-            <div class="px-6 py-4 flex justify-center py-1">
-                <div class="text-center">
+            <div class="px-6 py-4 py-1">
+                <div class="flex justify-center ">
                     <img src="/img/profile.jpg" class="rounded-full h-24 w-24" />
+                </div>
+                <div class="text-center">
                     <h4>Bedram Tamang</h4>
 
-                    <div class="text-justify text-grey-darker leading-normal my-6">
-                        Hello, I am <a href="https://twitter.com/tmg_bedus" target="_blank">@Bedram Tamang</a>, I am a
+                    <div class="text-justify text-gray-700 leading-normal my-6">
+                        Hello, I am <a href="https://twitter.com/tmg_bedus" target="_blank">@Bedram Tamang</a>, I am
+                        a
                         Software
                         Architect, Developer, Freelancer with more than 4 years of experience in the web development
                         field,
-                        passionate for cutting edge technology. My core objective is to understand the business need and
+                        passionate for cutting edge technology. My core objective is to understand the business need
+                        and
                         design
                         high performance scalable web application using best fit technology stack.
                         TDD, SOLID, DRY, Design Patterns are some recurring terms in my workplace.
@@ -98,4 +102,5 @@
             </div>
         </div>
     </div>
-    @endsection
+</div>
+@endsection
