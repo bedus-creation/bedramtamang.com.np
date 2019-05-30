@@ -85,7 +85,13 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    { }
+    {
+        $post = $this->repository->findOrFail($id);
+        $post->update($request->all());
+        $post->addCategory($request->categories);
+        $post->addTag($request->tags);
+        return redirect()->back()->with('success', 'Data has been updated successfully.');
+    }
 
     /**
      * Remove the specified resource from storage.
