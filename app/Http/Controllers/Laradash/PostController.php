@@ -45,7 +45,10 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $request->merge(['slug' => str_slug(request('title'), '-')]);
+        $request->merge([
+            'user_id' => auth()->user()->id,
+            'slug' => str_slug(request('title'), '-')
+        ]);
         $post = $this->repository->create($request->all());
         $post->addCategory($request->categories);
         $post->addTag($request->tags);
