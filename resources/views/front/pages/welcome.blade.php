@@ -32,8 +32,8 @@
                         <img class="w-10 h-10 rounded-full mr-4" src="{{url('/img/profile.jpg')}}"
                             alt="Avatar of Jonathan Reinink">
                         <div class="text-sm">
-                            <p class="text-black leading-none">Root User</p>
-                            <p class="text-grey-dark">{{$item->created_at->format('M d, Y')}}</p>
+                            <p class="text-gray-900 leading-none">Root User</p>
+                            <p class="text-gray-600">{{$item->created_at->format('M d, Y')}}</p>
                         </div>
                     </div>
                 </div>
