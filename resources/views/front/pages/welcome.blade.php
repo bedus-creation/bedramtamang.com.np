@@ -6,7 +6,7 @@
         <div class="md:w-3/4 md:pr-2">
             @foreach($posts as $item)
             <div class="w-full lg:flex mb-3">
-                <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+                <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover bg-center rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
                     style="background-image: url('{{optional($item->media)->link() ?? getImage()}}')"
                     title="Woman holding a mug">
                 </div>
@@ -24,7 +24,7 @@
                         <div class="text-black font-bold text-xl mb-2">
                             <a href="{{$item->frontUrl()}}">{{$item->title}}</a>
                         </div>
-                        <p class="text-grey-darker text-base">
+                        <p class="text text-base">
                             {{str_limit(strip_tags($item->body),200)}}
                         </p>
                     </div>
