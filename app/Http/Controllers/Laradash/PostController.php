@@ -74,7 +74,7 @@ class PostController extends Controller
     {
         $post = $this->repository->with('category')
             ->with('tag')->findOrFail($id);
-        return view('laradash.action.posts.create', compact('post'));
+        return view('laradash.action.posts.edit', compact('post'));
     }
 
     /**
@@ -85,9 +85,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
-    }
+    { }
 
     /**
      * Remove the specified resource from storage.

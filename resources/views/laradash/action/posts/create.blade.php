@@ -85,11 +85,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
 <script>
-    $('#body').summernote({
-        placeholder: 'Your content goes here........',
-        tabsize: 2,
-        height: 200
-    });
+    $('#body').summernote(configSummernote);
     $('#cover').fileupload({
         serverUploadUrl: "{{url('admin/medias')}}",
         serverAllFileUrl: "{{url('admin/medias')}}"
