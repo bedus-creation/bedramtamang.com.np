@@ -10,3 +10,11 @@ Route::get('about-me-bedram-tamang', function () {
 
 
 Laradash::route();
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

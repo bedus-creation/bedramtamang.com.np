@@ -24,10 +24,10 @@
                 <ul class="nav">
                     <li class="nav-item">
                         <a href="/components/grid-system" class="nav-link">
-                            <span class="sidebar-mini">G</span> 
+                            <span class="sidebar-mini">G</span>
                             <span class="sidebar-normal">Grid System</span>
                         </a>
-                    </li> 
+                    </li>
                 </ul>
             </div>
         </div>
@@ -47,20 +47,44 @@
                         <b class="caret"></b>
                     </p>
                 </a>
-                <div class="collapse" id="settings">
+                <div class="collapse" id="posts">
                     <ul class="nav">
                         <li class="nav-item">
-                            <a href="/admin/posts" class="nav-link">
-                                <span class="sidebar-mini">A</span> 
+                            <a href="{{url('/admin/posts')}}" class="nav-link">
+                                <span class="sidebar-mini">A</span>
                                 <span class="sidebar-normal">All Posts</span>
                             </a>
-                        </li> 
+                        </li>
                         <li class="nav-item">
                             <a href="/admin/posts/create" class="nav-link">
-                                <span class="sidebar-mini">C</span> 
+                                <span class="sidebar-mini">C</span>
                                 <span class="sidebar-normal">Create Post</span>
                             </a>
-                        </li> 
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <a href="#categories" data-toggle="collapse" class="nav-link">
+                    <i class="far fa-chart-bar"></i>
+                    <p class="pl-2 mb-0">Categories
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="categories">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="{{url('/admin/categories')}}" class="nav-link">
+                                <span class="sidebar-mini">A</span>
+                                <span class="sidebar-normal">All Posts</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/categories/create" class="nav-link">
+                                <span class="sidebar-mini">C</span>
+                                <span class="sidebar-normal">Create Post</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </li>
