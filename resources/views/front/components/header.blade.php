@@ -8,7 +8,11 @@
                 </div>
             </a>
             <div class="flex">
-                <div class="px-3 py-3">Home</div>
+                <div class="px-3 py-3">
+                    <a href="{{url('/')}}">
+                        Home
+                    </a>
+                </div>
                 <div class="px-3 py-3">Blog</div>
                 <div class="px-3 py-3">Portfolio</div>
                 <div class="px-3 py-3">Project</div>

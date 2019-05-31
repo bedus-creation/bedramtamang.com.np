@@ -3,7 +3,7 @@
 @section('content')
 <section class="py-5 my-4 ">
     <div class="container">
-        <div class="mx-auto w-3/4">
+        <div class="mx-auto md:w-3/5">
             <a href="{{optional($post->media)->link('big') ?? getImage()}}">
                 <img src="{{optional($post->media)->link('big') ?? getImage()}}" class="img-fluid w-full">
             </a>
