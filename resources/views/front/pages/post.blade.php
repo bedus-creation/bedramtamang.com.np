@@ -7,7 +7,7 @@
             <a href="{{optional($post->media)->link('big') ?? getImage()}}">
                 <img src="{{optional($post->media)->link('big') ?? getImage()}}" class="img-fluid w-full">
             </a>
-            <div class="bg-white p-6">
+            <div class="p-6">
                 <div class="flex items-center">
                     <svg aria-hidden="true" data-prefix="far" data-icon="clock" role="img"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
@@ -31,7 +31,10 @@
                     </span>
                 </div>
                 <hr>
-                {!! $post->body !!}
+                <div class="user-content">
+                    {{-- @markdown($post->body) --}}
+                    {!! $post->body !!}
+                </div>
                 <hr>
                 <div id="disqus_thread"></div>
             </div>
@@ -41,6 +44,7 @@
 @endsection
 
 @section('scripts')
+<link rel="stylesheet" href="/css/user_input.css">
 <script>
     var disqus_config = function () {
         this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
@@ -57,5 +61,16 @@
 
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-        Disqus.</a></noscript>
+        Disqus.</a>
+</noscript>
+<link rel="stylesheet" href="/lib/highlight/styles/default.css">
+<script src="/lib/highlight/highlight.pack.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block);
+        });
+    });
+
+</script>
 @endsection

@@ -6,10 +6,10 @@
             ['fontsize', ['fontsize']],
             ['font', ['bold', 'italic', 'underline', 'font', 'strikethrough', 'superscript', 'subscript']],
             ['fontname', ['fontname']],
-            // ['color', ['color']],
+            ['color', ['color']],
             ['para', ['ul', 'ol', 'paragraph']],
             ['height', ['height']],
-            // ['insert', ['picture', 'hr','link']],
+            ['insert', ['picture', 'hr', 'link']],
             ['insert', ['hr', 'link']],
             ['table', ['table']],
             ['view', ['fullscreen', 'codeview']]
