@@ -1,5 +1,5 @@
 <div class="bg-white md:shadow-outline">
-    <div class="container mx-auto px-20">
+    <div class="container mx-auto md:px-20 px-2">
         <div class="flex justify-between font-semibold whitespace-no-wrap overflow-x-auto overflow-y-hidden py-2">
             <a href="{{url('/')}}" class="hidden md:flex items-center">
                 <img src="{{url('/img/profile.jpg')}}" alt="Avatar of Jonathan Reinink" class="w-10 h-10 rounded-full">

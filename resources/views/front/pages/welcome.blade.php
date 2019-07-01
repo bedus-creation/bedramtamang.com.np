@@ -1,7 +1,7 @@
 @extends('theme.front.app')
 
 @section('content')
-<div class="container mx-auto py-2 my-4 px-20">
+<div class="container mx-auto py-2 my-4 md:px-20 px-2">
     <div class="md:flex">
         <div class="md:w-3/4 md:pr-2">
             @foreach($posts as $item)

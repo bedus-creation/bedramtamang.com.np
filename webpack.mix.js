@@ -26,23 +26,23 @@ mix.sass('resources/sass/laradash/laradash.scss', 'public/laradash/css');
 // Only run PurgeCSS during production builds for faster development builds
 // and so you still have the full set of utilities available during
 // development.
-if (mix.inProduction()) {
-    mix.webpackConfig({
-        plugins: [
-            new PurgecssPlugin({
-                // Specify the locations of any files you want to scan for class names.
-                paths: glob.sync([
-                    path.join(__dirname, "resources/views/**/*.blade.php"),
-                    path.join(__dirname, "resources/js/**/*.vue")
-                ]),
-                extractors: [{
-                    extractor: TailwindExtractor,
+// if (mix.inProduction()) {
+//     mix.webpackConfig({
+//         plugins: [
+//             new PurgecssPlugin({
+//                 // Specify the locations of any files you want to scan for class names.
+//                 paths: glob.sync([
+//                     path.join(__dirname, "resources/views/**/*.blade.php"),
+//                     path.join(__dirname, "resources/js/**/*.vue")
+//                 ]),
+//                 extractors: [{
+//                     extractor: TailwindExtractor,
 
-                    // Specify the file extensions to include when scanning for
-                    // class names.
-                    extensions: ["html", "js", "php", "vue"]
-                }]
-            })
-        ]
-    });
-}
+//                     // Specify the file extensions to include when scanning for
+//                     // class names.
+//                     extensions: ["html", "js", "php", "vue"]
+//                 }]
+//             })
+//         ]
+//     });
+// }
