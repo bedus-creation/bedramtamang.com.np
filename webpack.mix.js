@@ -21,7 +21,7 @@ mix.react('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/user_input.scss', 'public/css');
 
-mix.sass('resources/sass/laradash/laradash.scss', 'public/laradash/css');
+// mix.sass('resources/sass/laradash/laradash.scss', 'public/laradash/css');
 
 // Only run PurgeCSS during production builds for faster development builds
 // and so you still have the full set of utilities available during

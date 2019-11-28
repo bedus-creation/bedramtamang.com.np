@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bedram Tamang | Software Engineer From Nepal.</title>
+    <title>@yield('title','Bedram Tamang | Software Engineer From Nepal.')</title>
     <meta name="csrf-token" content="{{csrf_token()}}">
     <meta name="keywords"
         content="Bedram Tamang, Engineer from Nepal, Software Developer, Laravel, Vue, Tailwind, Mysql, Php " />
@@ -18,6 +18,7 @@
     <div id="app">
         @include('front.components.header')
         @yield('content')
+        @include('front.components.footer')
     </div>
     {{-- <script src="{{url('js/app.js')}}"></script> --}}
     @yield('scripts')

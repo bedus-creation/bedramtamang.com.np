@@ -1,5 +1,9 @@
 @extends('theme.front.app')
 
+@section('title')
+{{$post->title}}
+@endsection
+
 @section('content')
 <section class="py-5 my-4 ">
     <div class="container">

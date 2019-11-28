@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Laradash\Post;
 use Illuminate\Database\Seeder;
 use App\User;
 
@@ -17,5 +18,6 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('May30,2019'),
             'name' => 'Bedram TamanG'
         ]);
+        factory(Post::class, 15)->create();
     }
 }

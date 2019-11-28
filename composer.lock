@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32a89cbc8d0e6ac35ba57295e5ee74a6",
+    "content-hash": "d5fa2ef09a33942dcb501790d00e6228",
     "packages": [
         {
             "name": "aammui/laradash",
@@ -55,6 +55,61 @@
             ],
             "description": "Laravel beautiful admin panel",
             "time": "2019-03-26T19:36:49+00:00"
+        },
+        {
+            "name": "ausi/slug-generator",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ausi/slug-generator.git",
+                "reference": "59b641dfa764658e1fbf37f75312e702817cd319"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ausi/slug-generator/zipball/59b641dfa764658e1fbf37f75312e702817cd319",
+                "reference": "59b641dfa764658e1fbf37f75312e702817cd319",
+                "shasum": ""
+            },
+            "require": {
+                "ext-intl": "*",
+                "ext-mbstring": "*",
+                "ext-pcre": "*",
+                "lib-icu": ">=4.2.1",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.4",
+                "php-coveralls/php-coveralls": "^2.0",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ausi\\SlugGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Auswöger",
+                    "email": "martin@auswoeger.com"
+                }
+            ],
+            "description": "Slug Generator",
+            "keywords": [
+                "ascii",
+                "cldr",
+                "pretty-url",
+                "slug",
+                "slug-generator",
+                "slugify",
+                "transliteration",
+                "unicode"
+            ],
+            "time": "2018-12-11T20:59:21+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
