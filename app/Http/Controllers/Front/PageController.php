@@ -29,4 +29,9 @@ class PageController extends Controller
     {
         return view('front.pages.about.index');
     }
+
+    public function openSource()
+    {
+        return view('front.pages.open-source.index');
+    }
 }
