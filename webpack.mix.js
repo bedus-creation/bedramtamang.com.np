@@ -3,6 +3,20 @@ var tailwindcss = require('tailwindcss');
 let glob = require("glob-all");
 let PurgecssPlugin = require("purgecss-webpack-plugin");
 
+
+mix.webpackConfig({
+    resolve: {
+        extensions: ['.js', '.vue', '.json'],
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js',
+            '@': __dirname + '/resources/js'
+        },
+    },
+    output: {
+        chunkFilename: 'dist/js/chunks/[name].js?id=[chunkhash]',
+    }
+});
+
 // Custom PurgeCSS extractor for Tailwind that allows special characters in
 // class names.
 //
@@ -17,9 +31,13 @@ mix.postCss('resources/css/tailwind.css', 'public/css', [
     tailwindcss('./tailwind.config.js'),
 ]);
 
-mix.react('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .sass('resources/sass/user_input.scss', 'public/css');
+// mix.react('resources/js/app.js', 'public/js')
+//     .sass('resources/sass/app.scss', 'public/css')
+//     .sass('resources/sass/user_input.scss', 'public/css');
+mix.js('resources/js/app.js', 'public/dist/js')
+    .styles('resources/css/markdown.css', 'public/dist/css/markdown.css')
+    .sass('resources/sass/app.scss', 'public/dist/css/app.css')
+    .version();
 
 // mix.sass('resources/sass/laradash/laradash.scss', 'public/laradash/css');
 
@@ -46,3 +64,9 @@ mix.react('resources/js/app.js', 'public/js')
 //         ]
 //     });
 // }
+
+
+
+// mix.js('resources/js/app.js', 'public/dist/js')
+//     .styles(['resources/sass/app.css'], 'public/dist/css/app.css')
+//     .version();

@@ -16,12 +16,11 @@ Blogs from Bedram Tamang
         <div class="md:w-3/4 md:pr-2">
             @foreach($posts as $item)
             <div class="w-full lg:flex mb-3">
-                <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover bg-center rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-                    style="background-image: url('{{optional($item->media)->link() ?? getImage()}}')"
-                    title="Woman holding a mug">
+                <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover bg-center rounded-t-lg lg:rounded-t-none lg:rounded-l-lg text-center overflow-hidden"
+                    style="background-image: url('{{$item->cover ?? getImage()}}')" title="Woman holding a mug">
                 </div>
                 <div
-                    class="bg-white w-full rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                    class="bg-white w-full rounded-b lg:rounded-b-none lg:rounded-r-lg p-4 flex flex-col justify-between leading-normal">
                     <div class="mb-8">
                         <p class="text-sm text-gray-600  flex items-center">
                             <svg class="fill-current text-grey w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg"
