@@ -10,12 +10,13 @@
         content="Bedram Tamang, Engineer from Nepal, Software Developer, Laravel, Vue, Tailwind, Mysql, Php " />
     <meta name="author" content="" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="{{url('css/app.css')}}">
+    <link rel="stylesheet" href="{{url('css/dist/app.css')}}">
     <link rel="stylesheet" href="{{url('css/tailwind.css')}}">
+    <link rel="stylesheet" href="{{mix('/dist/css/markdown.css')}}">
 </head>
 
 <body>
-    <div id="app">
+    <div class="bg-gray-100" id="app">
         @include('front.components.header')
         @yield('content')
         @include('front.components.footer')

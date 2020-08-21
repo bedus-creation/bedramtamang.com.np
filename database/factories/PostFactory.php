@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Laradash\Post;
+use App\Domain\CMS\Models\Post;
 use Faker\Generator as Faker;
 use App\User;
 

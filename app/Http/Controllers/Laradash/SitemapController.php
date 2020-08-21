@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Laradash;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Laradash\Post;
+use App\Domain\CMS\Models\Post;
 
 class SitemapController extends Controller
 {

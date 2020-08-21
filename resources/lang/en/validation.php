@@ -40,6 +40,10 @@ return [
     'dimensions' => 'The :attribute has invalid image dimensions.',
     'distinct' => 'The :attribute field has a duplicate value.',
     'email' => 'The :attribute must be a valid email address.',
+<<<<<<< HEAD
+=======
+    'ends_with' => 'The :attribute must end with one of the following: :values.',
+>>>>>>> 89b8f88997daca671f32d4db2d12a13064c62211
     'exists' => 'The selected :attribute is invalid.',
     'file' => 'The :attribute must be a file.',
     'filled' => 'The :attribute field must have a value.',
@@ -92,6 +96,10 @@ return [
     'not_in' => 'The selected :attribute is invalid.',
     'not_regex' => 'The :attribute format is invalid.',
     'numeric' => 'The :attribute must be a number.',
+<<<<<<< HEAD
+=======
+    'password' => 'The password is incorrect.',
+>>>>>>> 89b8f88997daca671f32d4db2d12a13064c62211
     'present' => 'The :attribute field must be present.',
     'regex' => 'The :attribute format is invalid.',
     'required' => 'The :attribute field is required.',
@@ -108,7 +116,11 @@ return [
         'string' => 'The :attribute must be :size characters.',
         'array' => 'The :attribute must contain :size items.',
     ],
+<<<<<<< HEAD
     'starts_with' => 'The :attribute must start with one of the following: :values',
+=======
+    'starts_with' => 'The :attribute must start with one of the following: :values.',
+>>>>>>> 89b8f88997daca671f32d4db2d12a13064c62211
     'string' => 'The :attribute must be a string.',
     'timezone' => 'The :attribute must be a valid zone.',
     'unique' => 'The :attribute has already been taken.',

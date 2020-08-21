@@ -8,10 +8,10 @@
 <section class="py-5 my-4 ">
     <div class="container">
         <div class="mx-auto md:w-3/5">
-            <a href="{{optional($post->media)->link('big') ?? getImage()}}">
-                <img src="{{optional($post->media)->link('big') ?? getImage()}}" class="img-fluid w-full">
+            <a href="{{$post->cover ?? getImage()}}">
+                <img src="{{$post->cover ?? getImage()}}" class="img-fluid w-full">
             </a>
-            <div class="p-6">
+            <div class="py-6">
                 <div class="flex items-center">
                     <svg aria-hidden="true" data-prefix="far" data-icon="clock" role="img"
                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
@@ -35,9 +35,8 @@
                     </span>
                 </div>
                 <hr>
-                <div class="user-content">
-                    {{-- @markdown($post->body) --}}
-                    {!! $post->body !!}
+                <div class="markdown-body">
+                    {!! markdownToHtml($post->body) !!}
                 </div>
                 <hr>
                 <div id="disqus_thread"></div>
@@ -67,7 +66,7 @@
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
         Disqus.</a>
 </noscript>
-<link rel="stylesheet" href="/lib/highlight/styles/default.css">
+<link rel="stylesheet" href="/lib/highlight/styles/github-gist.css">
 <script src="/lib/highlight/highlight.pack.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {

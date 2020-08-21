@@ -15,6 +15,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
+<<<<<<< HEAD
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
 
                                 @if ($errors->has('name'))
@@ -22,6 +23,15 @@
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
+=======
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+>>>>>>> 89b8f88997daca671f32d4db2d12a13064c62211
                             </div>
                         </div>
 
@@ -29,6 +39,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
+<<<<<<< HEAD
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
@@ -36,6 +47,15 @@
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
+=======
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+>>>>>>> 89b8f88997daca671f32d4db2d12a13064c62211
                             </div>
                         </div>
 
@@ -43,6 +63,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
+<<<<<<< HEAD
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                 @if ($errors->has('password'))
@@ -50,6 +71,15 @@
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
+=======
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+>>>>>>> 89b8f88997daca671f32d4db2d12a13064c62211
                             </div>
                         </div>
 
@@ -57,7 +87,11 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-6">
+<<<<<<< HEAD
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+=======
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+>>>>>>> 89b8f88997daca671f32d4db2d12a13064c62211
                             </div>
                         </div>
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use App\Models\Laradash\Post;
+use App\Domain\CMS\Models\Post;
 
 class PageController extends Controller
 {

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
+=======
+<!doctype html>
+>>>>>>> 89b8f88997daca671f32d4db2d12a13064c62211
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -14,14 +18,22 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+=======
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+>>>>>>> 89b8f88997daca671f32d4db2d12a13064c62211
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
+<<<<<<< HEAD
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+=======
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+>>>>>>> 89b8f88997daca671f32d4db2d12a13064c62211
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
