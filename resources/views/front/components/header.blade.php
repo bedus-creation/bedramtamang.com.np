@@ -8,7 +8,7 @@
                     It's me Bed.
                 </div>
             </a>
-            <div class="flex ml-20">
+            <div class="flex pl-20">
                 <div class="px-3 py-3">
                     <a href="{{url('/')}}">
                         Home
