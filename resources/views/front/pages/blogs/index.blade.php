@@ -7,11 +7,11 @@ Blogs from Bedram Tamang
 
 @section('content')
 <div style="background:url('/img/page-header-bg.png')" class="h-32 flex items-center">
-    <div class="container mx-auto md:px-20 px-2">
+    <div class="container mx-auto md:px-20 px-6">
         <h1 class="text-white text-2xl">Blogs</h1>
     </div>
 </div>
-<div class="container mx-auto py-2 my-4 md:px-20 px-2">
+<div class="container mx-auto py-2 my-4 md:px-20 px-6">
     <div class="md:flex">
         <div class="md:w-3/4 md:pr-2">
             @foreach($posts as $item)
@@ -34,7 +34,7 @@ Blogs from Bedram Tamang
                             <a href="{{$item->frontUrl()}}">{{$item->title}}</a>
                         </div>
                         <p class="text-gray-700 text-base">
-                            {{str_limit(strip_tags($item->body),200)}}
+                            {{str_limit(strip_tags(markdownToHtml($item->body)),200)}}
                         </p>
                     </div>
                     <div class="flex items-center">
