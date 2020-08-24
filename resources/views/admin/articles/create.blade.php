@@ -3,7 +3,7 @@
 @section('css')
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300|Mulish:wght@200;500;700&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;500;700&family=Source+Code+Pro&display=swap"
     rel="stylesheet">
 <link rel="stylesheet" href="/assets/lib/select2/select2.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
