@@ -1,9 +1,9 @@
 @extends('theme.front.app')
 
 @section('content')
-<div class="container mx-auto py-2 my-4 md:px-20 px-2">
+<div class="container mx-auto py-2 my-4 md:px-20 px-6">
     <div class="md:flex">
-        <div class="md:w-3/4 md:pr-2">
+        <div class="w-full md:w-3/4 md:pr-2">
             @foreach($posts as $item)
             <div class="w-full lg:flex mb-3">
                 <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover bg-center rounded-t-lg lg:rounded-t-none lg:rounded-l-lg text-center overflow-hidden"
@@ -39,7 +39,7 @@
             </div>
             @endforeach
         </div>
-        <div class="md:w-1/4 bg-white pr-2">
+        <div class="w-full md:w-1/4 bg-white lg:pr-2">
             <div class="px-6 py-4 py-1">
                 <div class="flex justify-center ">
                     <img src="/img/profile.jpg" class="rounded-full h-24 w-24" />
