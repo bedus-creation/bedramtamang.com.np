@@ -10,8 +10,7 @@
         content="Bedram Tamang, Engineer from Nepal, Software Developer, Laravel, Vue, Tailwind, Mysql, Php " />
     <meta name="author" content="" />
     <meta name="description" content="" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;500;700&family=Source+Code+Pro:wght@300&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;500;700&family=Source+Code+Pro&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="{{url('css/dist/app.css')}}">
     <link rel="stylesheet" href="{{url('css/tailwind.css')}}">
