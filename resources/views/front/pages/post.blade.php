@@ -21,7 +21,7 @@
                         </path>
                     </svg>
                     <span class="pl-2">
-                        December 10, 2018
+                        {{$post->created_at->format('d M, Y')}}
                     </span>
                     <span class="pl-4"></span>
                     <svg aria-hidden="true" data-prefix="fas" data-icon="user" role="img"
@@ -34,7 +34,7 @@
                         Root User
                     </span>
                 </div>
-                <hr>
+                <hr class="my-4 border-t">
                 <div class="markdown-body">
                     {!! markdownToHtml($post->body) !!}
                 </div>
