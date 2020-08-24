@@ -4,6 +4,22 @@
     vertical-align: text-bottom;
 }
 
+.markdown-body ul {
+    list-style: disc;
+}
+
+.markdown-body ul ul {
+    list-style: circle;
+}
+
+.markdown-body ol {
+    list-style: decimal;
+}
+
+.markdown-body ol ol {
+    list-style: lower-alpha;
+}
+
 .markdown-body .anchor {
     float: left;
     line-height: 1;
