@@ -9,7 +9,11 @@ class PageController extends Controller
 {
     public function index()
     {
-        $posts = Post::orderBy('id', 'desc')->paginate(12);
+        $posts = Post::query()
+            ->orderByDesc('')
+            ->orderByDesc('id')
+            ->paginate(12);
+
         return view('front.pages.welcome', compact('posts'));
     }
 

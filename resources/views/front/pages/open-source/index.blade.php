@@ -12,7 +12,6 @@ Open source | packages | Bedram Tamang
 </div>
 <div class="container mx-auto py-2 my-4 md:px-20 px-2">
     <div class="md:flex md:-mx-4">
-
         <div class="w-full md:w-1/3 md:mx-4">
             <div class="w-full rounded overflow-hidden shadow-lg">
                 <div class="h-32 w-full flex bg-center bg-cover items-center"

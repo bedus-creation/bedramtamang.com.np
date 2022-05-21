@@ -2,6 +2,7 @@
 
 // use Aammui\Laradash\Facade\Laradash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'Front\PageController@index');
 Route::get('posts/{id}/{title}', 'Front\PageController@post');
