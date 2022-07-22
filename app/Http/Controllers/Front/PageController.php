@@ -10,7 +10,6 @@ class PageController extends Controller
     public function index()
     {
         $posts = Post::query()
-            ->orderByDesc('')
             ->orderByDesc('id')
             ->paginate(12);
 
