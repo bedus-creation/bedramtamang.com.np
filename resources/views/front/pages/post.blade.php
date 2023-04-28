@@ -9,7 +9,8 @@
         <div class="container mx-auto px-6 lg:px-0">
             <div class="mx-auto md:w-3/5">
                 <a href="{{$post->cover ?? getImage()}}">
-                    <img src="{{$post->cover ?? getImage()}}" class="img-fluid w-full rounded-lg" alt="{{$post->title}}">
+                    <img src="{{$post->cover ?? getImage()}}" class="img-fluid w-full rounded-lg"
+                         alt="{{$post->title}}">
                 </a>
                 <div class="py-6">
                     <div class="flex items-center">
@@ -32,7 +33,7 @@
                             </path>
                         </svg>
                         <span class="pl-2">
-                        Root User
+                        {{$post->user->name}}
                     </span>
                     </div>
                     <hr class="my-4 border-t">

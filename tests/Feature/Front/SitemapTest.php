@@ -3,17 +3,15 @@
 namespace Tests\Feature\Front;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\Factories\ArticleFactory;
+use Database\Factories\PostFactory;
 use Tests\TestCase;
 
 class SitemapTest extends TestCase
 {
-    use RefreshDatabase;
-
     public function setUp(): void
     {
         parent::setUp();
-        ArticleFactory::new()->create();
+        PostFactory::new()->create();
     }
 
     /** @test */

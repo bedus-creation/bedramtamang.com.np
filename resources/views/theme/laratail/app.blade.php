@@ -8,13 +8,11 @@
     <title>Tailwind Admin Panel</title>
     @yield('css')
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto@100;300;500" rel="stylesheet">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <link rel="stylesheet" href="/dist/css/app.css">
-    <link rel="stylesheet" href="{{mix('/dist/css/markdown.css')}}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <style>
-    @media screen and (min-width:991px) {
+    @media screen and (min-width: 991px) {
         .image-menu {
             padding-left: .75rem;
             padding-right: .75rem;
@@ -87,19 +85,18 @@
 </style>
 
 <body style="font-family:Roboto">
-    <div class="relative h-screen">
-        @include('theme.laratail.components.sidebar')
-        <div class="main-content min-h-screen bg-gray-300 w-full lg:w-4/5 reltive float-right"
-            :class="{'bg-gray-900 bg-opacity-75':nav}">
-            @include('theme.laratail.components.navbar')
-            <div id="app">
-                @yield('content')
-            </div>
+<div class="relative h-screen">
+    @include('theme.laratail.components.sidebar')
+    <div class="main-content min-h-screen bg-gray-300 w-full lg:w-4/5 reltive float-right"
+         :class="{'bg-gray-900 bg-opacity-75':nav}">
+        @include('theme.laratail.components.navbar')
+        <div id="app">
+            @yield('content')
         </div>
     </div>
-    <script src="{{url(mix('/dist/js/app.js'))}}"></script>
-    @include('theme.laratail.components.flash')
-    @yield('scripts')
+</div>
+@include('theme.laratail.components.flash')
+@yield('scripts')
 </body>
 
 </html>

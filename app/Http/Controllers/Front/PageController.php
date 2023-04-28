@@ -18,7 +18,8 @@ class PageController extends Controller
 
     public function post($id, $title)
     {
-        $post = Post::findOrFail($id);
+        $post = Post::query()->with('user')->findOrFail($id);
+
         return view('front.pages.post', compact('post'));
     }
 

@@ -3,35 +3,35 @@
 namespace Tests\Feature\User;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\Factories\UserFactory;
-use App\Domain\User\Enums\Role;
+use Tests\Authenticate;
 use Tests\TestCase;
 
 class RoleTest extends TestCase
 {
     use RefreshDatabase;
+    use Authenticate;
 
     public function setUp(): void
     {
         parent::setUp();
 
-        $this->withoutExceptionHandling();
-
-        // Setup Admin User
-        $admin = UserFactory::new()->withRole(Role::ADMIN)->create();
-        $this->be($admin);
+        $this->authenticate();
     }
 
     /**
      * @test
      *
-     * @dataProvider \Tests\Factories\RoleFactory::role200StatusRoutes()
-     *
-     * @return void
+     * @dataProvider role200StatusRoutes()
      */
     public function roleRoutes200StatusTest($route, $status)
     {
         $this->get($route)
             ->assertStatus($status);
+    }
+
+
+    public static function role200StatusRoutes(): \Generator
+    {
+        yield ['admin/roles', 200];
     }
 }

@@ -11,7 +11,7 @@ class ArticleStoreRequest extends FormRequest
     {
         $this->merge([
             'user_id' => auth()->id(),
-            'slug' => Str::slug($this->title),
+            'slug'    => Str::slug($this->title),
         ]);
     }
 
@@ -33,7 +33,8 @@ class ArticleStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:3'
+            'title' => 'required|min:3',
+            'body'  => 'required|string'
         ];
     }
 }

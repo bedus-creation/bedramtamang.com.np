@@ -2,8 +2,8 @@
 
 namespace App\Domain\User\Enums;
 
-class Role
+enum Role: string
 {
-    const SYSTEM_ADMIN = "system_admin";
-    const ADMIN = 'admin';
+    case SYSTEM_ADMIN = "system_admin";
+    case ADMIN = 'admin';
 }
