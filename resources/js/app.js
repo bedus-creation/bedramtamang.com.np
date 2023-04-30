@@ -1,10 +1,15 @@
-import Vue from 'vue';
-window._ = require("lodash");
+import { createApp, h } from 'vue'
+import { createInertiaApp } from '@inertiajs/vue3'
+import "@/utils/flash.js"
 
-require('@/utils/flash.js');
-Vue.component('FileInput', () => import('@/components/FileInput'));
-Vue.component('editor', () => import('@/components/Editor'));
-
-const app = new Vue({
-    el: '#app',
-});
+createInertiaApp({
+    resolve: name => {
+        const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
+        return pages[`./Pages/${name}.vue`]
+    },
+    setup({ el, App, props, plugin }) {
+        createApp({ render: () => h(App, props) })
+            .use(plugin)
+            .mount(el)
+    },
+})

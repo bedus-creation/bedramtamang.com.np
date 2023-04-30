@@ -34,7 +34,7 @@ class UsersController extends Controller
     {
         $userStoreRequest->merge(['password' => bcrypt($userStoreRequest->password)]);
         $user = $this->repository->create($userStoreRequest->all());
-        $user->addRole(Role::ADMIN);
+        $user->addRole(Role::ADMIN->value);
         if ($userStoreRequest->image) {
             $user->toCollection('cover')
                 ->toDisk('public')

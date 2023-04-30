@@ -12,9 +12,7 @@
     <meta name="description" content="" />
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;500;700&family=Source+Code+Pro&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="{{url('css/dist/app.css')}}">
-    <link rel="stylesheet" href="{{url('css/tailwind.css')}}">
-    <link rel="stylesheet" href="{{mix('/dist/css/markdown.css')}}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -23,7 +21,6 @@
         @yield('content')
         @include('front.components.footer')
     </div>
-    {{-- <script src="{{url('js/app.js')}}"></script> --}}
     @yield('scripts')
 </body>
 

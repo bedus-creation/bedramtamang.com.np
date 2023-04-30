@@ -12,7 +12,7 @@
     </url>
     @foreach($data as $item)
     <url>
-        <loc>{{url($item->frontUrl())}}</loc>
+        <loc>{{url($item->link())}}</loc>
         <lastmod>{{$item->updated_at->format('Y-m-d')}}T{{$item->updated_at->format('h:i:s')}}+05:45</lastmod>
         @if($item->media)
         <image:image>

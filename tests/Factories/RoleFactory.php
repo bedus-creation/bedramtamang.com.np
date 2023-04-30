@@ -26,11 +26,4 @@ class RoleFactory extends BaseFactory
     {
         return [];
     }
-
-    public static function role200StatusRoutes()
-    {
-        return [
-            yield ['admin/roles', 200]
-        ];
-    }
 }

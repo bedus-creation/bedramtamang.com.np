@@ -3,12 +3,15 @@
 namespace App\Application\Admin\Controllers;
 
 use Aammui\LaravelTaggable\Models\Category;
+use Aammui\LaravelTaggable\Models\Tag;
 use App\Application\Admin\Requests\ArticleStoreRequest;
 use App\Domain\CMS\Models\Article;
-use Illuminate\Http\Request;
-use Aammui\LaravelTaggable\Models\Tag;
-use App\Http\Controllers\Controller;
 use App\Domain\CMS\Models\Post;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class ArticleController extends Controller
 {
@@ -25,14 +28,18 @@ class ArticleController extends Controller
         return view('admin.articles.index', compact('articles'));
     }
 
-    public function create(Request $request)
+    public function create(Request $request): Response
     {
         $categories = Category::all();
-        $tags = Tag::all();
-        return view('admin.articles.create', compact('categories', 'tags'));
+        $tags       = Tag::all();
+
+        return Inertia::render('Admin/Articles/Create', [
+            'categories' => $categories,
+            'tags'       => $tags
+        ]);
     }
 
-    public function store(ArticleStoreRequest $articleStoreRequest)
+    public function store(ArticleStoreRequest $articleStoreRequest): RedirectResponse
     {
         $article = $this->repository->create($articleStoreRequest->all());
         $article->addCategory($articleStoreRequest->categories);
@@ -44,17 +51,28 @@ class ArticleController extends Controller
         }
         return redirect()->back()->with('success', 'Article has been created.');
     }
+
     public function show(Article $article)
     {
         return view('admin.articles.show', compact('article'));
     }
 
-    public function edit(Request $request, $id)
+    /**
+     * @param Request $request
+     * @param $id
+     * @return Response
+     */
+    public function edit(Request $request, $id): Response
     {
         $categories = Category::all();
-        $tags = Tag::all();
-        $data = $this->repository->with(['media', 'tag', 'category'])->findOrFail($id);
-        return view('admin.articles.edit', compact('data', 'categories', 'tags'));
+        $tags       = Tag::all();
+        $article    = $this->repository->with(['media', 'tag', 'category'])->findOrFail($id);
+
+        return Inertia::render('Admin/Articles/Edit', [
+            'categories' => $categories,
+            'tags'       => $tags,
+            'article'    => $article
+        ]);
     }
 
     public function update(Request $request, $id)

@@ -55,7 +55,7 @@
             </div>
             <div class="markdown-body mb-2">
                 <label class="block text-gray-600 font-light mb-2">Description</label>
-                <editor name="body"></editor>
+                <Editor name="body"/>
             </div>
 
             <div class="mb-6">
