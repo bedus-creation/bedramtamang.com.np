@@ -8,12 +8,11 @@
     <title>Authentication</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body style="font-family:Roboto">
     @yield('content')
-    <script src="{{url(mix('/dist/js/app.js'))}}"></script>
     @include('theme.laratail.components.flash')
 </body>
 
