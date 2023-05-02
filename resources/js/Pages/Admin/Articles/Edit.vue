@@ -81,6 +81,6 @@ const form = useForm(() => ({
 }))
 
 const submit = () => {
-    form.post(route('articles.store'))
+    form.post( route('articles.store'))
 }
 </script>

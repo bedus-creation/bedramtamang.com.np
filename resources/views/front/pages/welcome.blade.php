@@ -13,7 +13,7 @@
                     class="bg-white w-full rounded-b-lg lg:rounded-b-none lg:rounded-r-lg p-4 flex flex-col justify-between leading-normal">
                     <div class="mb-8">
                         <div class="text-gray-900  font-bold text-xl mb-2">
-                            <a href="{{$item->frontUrl()}}">{{$item->title}}</a>
+                            <a href="{{$item->link()}}">{{$item->title}}</a>
                         </div>
                         <p class="text-gray-700 text-base">
                             {{\Illuminate\Support\Str::limit(strip_tags(markdownToHtml($item->body)),200)}}
