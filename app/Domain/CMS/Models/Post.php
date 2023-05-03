@@ -2,6 +2,7 @@
 
 namespace App\Domain\CMS\Models;
 
+use Aammui\LaravelMedia\Enum\Responsive;
 use Aammui\LaravelMedia\Traits\HasMedia;
 use Aammui\LaravelTaggable\Traits\HasCategory;
 use Aammui\LaravelTaggable\Traits\HasTag;
@@ -31,7 +32,7 @@ class Post extends Model
 
     public function getCoverAttribute()
     {
-        return optional(optional($this->fromCollection('cover')->getMedia())->first())->link()
+        return optional(optional($this->fromCollection('cover')->getMedia())->first())->link(Responsive::LG)
             ?? "/assets/img/logo.png";
     }
 

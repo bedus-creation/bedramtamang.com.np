@@ -8,7 +8,7 @@
                 </p>
             </div>
             <div class="w-48 text-right">
-                <a href="{{route('articles.index')}}"
+                <a :href="route('articles.index')"
                    class="bg-green-600 text-gray-200 rounded hover:bg-green-500 px-6 py-3 focus:outline-none ">List
                     Article</a>
             </div>
@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <!--                    <file-input name="image" />-->
+                    <input type="file" accept="image/*" @input="form.image = $event.target.files[0]">
                 </div>
                 <div class="pb-6">
                     <button type="submit"
@@ -78,9 +78,11 @@ const props = defineProps({
 const form = useForm(() => ({
     title: props.article.title,
     body: props.article.body,
+    image: null,
+    _method: 'put'
 }))
 
 const submit = () => {
-    form.post( route('articles.store'))
+    form.post(route('articles.update', props.article.id))
 }
 </script>
