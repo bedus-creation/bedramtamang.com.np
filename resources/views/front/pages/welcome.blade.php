@@ -7,7 +7,7 @@
             @foreach($posts as $item)
             <div class="w-full lg:flex mb-3">
                 <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover bg-center rounded-t-lg lg:rounded-t-none lg:rounded-l-lg text-center overflow-hidden"
-                    style="background-image: url('{{$item->cover ?? getImage()}}')" title="Woman holding a mug">
+                    style="background-image: url('{{$item->cover('sm') ?? getImage()}}')" title="Woman holding a mug">
                 </div>
                 <div
                     class="bg-white w-full rounded-b-lg lg:rounded-b-none lg:rounded-r-lg p-4 flex flex-col justify-between leading-normal">

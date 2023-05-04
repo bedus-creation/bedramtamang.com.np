@@ -54,6 +54,14 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "release": [
+            "@php artisan ziggy:generate --env=live",
+            "yarn build"
+        ],
+        "dev": [
+            "@php artisan ziggy:generate",
+            "yarn dev"
         ]
     },
     "extra": {
