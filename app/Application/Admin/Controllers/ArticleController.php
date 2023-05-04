@@ -52,11 +52,6 @@ class ArticleController extends Controller
         return redirect()->back()->with('success', 'Article has been created.');
     }
 
-    public function show(Article $article)
-    {
-        return view('admin.articles.show', compact('article'));
-    }
-
     /**
      * @param Request $request
      * @param $id

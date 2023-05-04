@@ -8,8 +8,8 @@
     <section class="py-5 my-4 ">
         <div class="container mx-auto px-6 lg:px-0">
             <div class="mx-auto md:w-3/5">
-                <a href="{{$post->cover ?? getImage()}}">
-                    <img src="{{$post->cover ?? getImage()}}" class="img-fluid w-full rounded-lg"
+                <a href="{{$post->cover('lg') ?? getImage()}}">
+                    <img src="{{$post->cover('lg') ?? getImage()}}" class="img-fluid w-full rounded-lg"
                          alt="{{$post->title}}">
                 </a>
                 <div class="py-6">
