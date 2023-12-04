@@ -1,18 +1,27 @@
+@php
+    use Illuminate\Support\Facades\Vite;
+@endphp
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>@yield('title','Bedram Tamang | Software Engineer From Nepal.')</title>
+    <title>@yield('title','Bedram Tamang | Software Engineer In Vancouver, Canada.')</title>
     <meta name="csrf-token" content="{{csrf_token()}}">
     <meta name="keywords"
-        content="Bedram Tamang, Engineer from Nepal, Software Developer, Laravel, Vue, Tailwind, Mysql, Php " />
+        content="Bedram Tamang,Software Engineer in Vancouver, BC, Canada, Full-stack, Developer Laravel, Vue, Tailwind, MySQL, PHP, Python " />
     <meta name="author" content="" />
     <meta name="description" content="" />
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;500;700&family=Source+Code+Pro&display=swap"
         rel="stylesheet">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <style>
+        {!! Vite::content('resources/css/app.css') !!}
+    </style>
+    <script>
+        {!! Vite::content('resources/js/app.js') !!}
+    </script>
 </head>
 
 <body>

@@ -33,14 +33,19 @@ class Post extends Model
         return url('posts/' . $this->id . '/' . Str::slug($this->title));
     }
 
-    public function cover($size =Responsive::SM): string
+    public function cover($size = Responsive::SM): string
     {
         /** @var Media $media */
         $media = $this->fromCollection('cover')->getMedia()->first();
-        $link  = json_decode($media?->in_json, true);
-        $path  = $link['url']['lg'] ?? "/assets/img/logo.png";
 
-        return Storage::disk($media->disk)->url($path);
+        $link = json_decode($media?->in_json, true);
+
+        if (isset($link['url']['lg'])) {
+            $path = $link['url']['lg'];
+            return Storage::disk($media->disk)->url($path);
+        }
+
+        return "/assets/img/logo.png";
     }
 
     public function user(): BelongsTo
