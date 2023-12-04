@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Application\Front\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Domain\CMS\Models\Post;
+use App\Http\Controllers\Controller;
+use Illuminate\View\View;
 
 class PageController extends Controller
 {
-    public function index()
+    public function index(): view
     {
         $posts = Post::query()
             ->orderByDesc('id')
@@ -23,9 +24,10 @@ class PageController extends Controller
         return view('front.pages.post', compact('post'));
     }
 
-    public function blogs()
+    public function blogs(): View
     {
-        $posts = Post::orderBy('id', 'desc')->paginate(8);
+        $posts = Post::query()->orderBy('id', 'desc')->paginate(8);
+
         return view('front.pages.blogs.index', compact('posts'));
     }
 
