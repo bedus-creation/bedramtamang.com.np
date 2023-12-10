@@ -8,7 +8,7 @@
                 </p>
             </div>
             <div class="w-48 text-right">
-                <a href="{{route('articles.index')}}"
+                <a :href="route('articles.index')"
                    class="bg-green-600 text-gray-200 rounded hover:bg-green-500 px-6 py-3 focus:outline-none ">List
                     Article</a>
             </div>
@@ -19,7 +19,15 @@
                   enctype="multipart/form-data">
                 <div class="mb-6">
                     <label class="block text-gray-600 font-light mb-2">Article Title</label>
-                    <BaseInput v-model="form.title"/>
+                    <BaseInput class="mb-2" v-model="form.title"/>
+                    <BaseError :message="form.errors.title"/>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-600 font-light mb-2">
+                        External Link
+                    </label>
+                    <BaseInput class="mb-2" v-model="form.external_link"/>
+                    <BaseError :message="form.errors.external_link"/>
                 </div>
                 <div class="mb-6">
                     <label class="block text-gray-600 font-light mb-2">Select Categories</label>
@@ -48,7 +56,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <!--                    <file-input name="image" />-->
+                    <input type="file" accept="image/*" @input="form.image = $event.target.files[0]">
                 </div>
                 <div class="pb-6">
                     <button type="submit"
@@ -65,12 +73,15 @@ import BaseEditor from "@/components/BaseEditor.vue";
 import useRoute from "../../../composable/useRoute";
 import BaseInput from "../../../components/Form/BaseInput.vue";
 import {useForm} from "@inertiajs/vue3";
+import BaseError from "../../../components/Form/BaseError.vue";
 
 const route = useRoute()
 
 const form = useForm({
     title: "",
-    body:"",
+    external_link: "",
+    image: null,
+    body: "",
 })
 
 const submit = () => {

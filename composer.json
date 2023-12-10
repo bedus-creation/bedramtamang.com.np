@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "aammui/l9-repository": "^0.0.5",
         "aammui/laravel-media": "^3.0",
         "aammui/laravel-taggable": "^3.0",
         "aammui/role-permission": "^3.1",
@@ -58,7 +59,8 @@
         ],
         "release": [
             "@php artisan ziggy:generate --env=live",
-            "yarn build"
+            "yarn build",
+            "yarn front:build"
         ],
         "dev": [
             "@php artisan ziggy:generate",

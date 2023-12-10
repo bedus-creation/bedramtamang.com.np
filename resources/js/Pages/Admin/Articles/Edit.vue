@@ -21,6 +21,15 @@
                     <label class="block text-gray-600 font-light mb-2">Article Title</label>
                     <BaseInput v-model="form.title"/>
                 </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-600 font-light mb-2">
+                        External Link
+                    </label>
+                    <BaseInput class="mb-2" v-model="form.external_link"/>
+                    <BaseError :message="form.errors.external_link"/>
+                </div>
+
                 <div class="mb-6">
                     <label class="block text-gray-600 font-light mb-2">Select Categories</label>
                     <select name="categories[]" id="categories" class="w-full border" multiple
@@ -65,6 +74,7 @@ import BaseEditor from "@/components/BaseEditor.vue";
 import useRoute from "../../../composable/useRoute";
 import BaseInput from "../../../components/Form/BaseInput.vue";
 import {useForm} from "@inertiajs/vue3";
+import BaseError from "../../../components/Form/BaseError.vue";
 
 const route = useRoute()
 
@@ -78,6 +88,7 @@ const props = defineProps({
 const form = useForm(() => ({
     title: props.article.title,
     body: props.article.body,
+    external_link: props.article.external_link,
     image: null,
     _method: 'put'
 }))

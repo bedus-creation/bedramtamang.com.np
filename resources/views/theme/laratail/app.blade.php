@@ -9,7 +9,7 @@
     @yield('css')
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Roboto@100;300;500" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite('resources/js/app.js', 'build/admin')
 </head>
 <style>
     @media screen and (min-width: 991px) {

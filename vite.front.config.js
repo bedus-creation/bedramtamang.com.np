@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import {defineConfig} from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 
@@ -8,9 +8,9 @@ export default defineConfig({
     },
     plugins: [
         laravel({
-            buildDirectory: 'build/admin',
+            buildDirectory: 'build/front',
             input: [
-                'resources/js/app.js',
+                'resources/js/vue.js',
             ],
             refresh: true,
         }),
@@ -22,5 +22,5 @@ export default defineConfig({
                 },
             },
         }),
-    ],
+    ]
 });

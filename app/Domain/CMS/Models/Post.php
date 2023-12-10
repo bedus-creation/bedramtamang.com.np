@@ -25,12 +25,13 @@ class Post extends Model
         'slug',
         'body',
         'type',
-        'user_id'
+        'user_id',
+        'external_link'
     ];
 
     public function link(): string
     {
-        return url('posts/' . $this->id . '/' . Str::slug($this->title));
+        return $this->external_link ?? url('posts/' . $this->id . '/' . Str::slug($this->title));
     }
 
     public function cover($size = Responsive::SM): string

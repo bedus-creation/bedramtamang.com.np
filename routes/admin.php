@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')
     ->middleware(['role:' . Role::ADMIN->value . '|' . Role::SYSTEM_ADMIN->value])
     ->group(function () {
-        Route::resource('/', DashboardController::class);
+        Route::resource('/', DashboardController::class)->only(['index'])
+            ->names('admin.dashboard');
         Route::resource('articles', ArticleController::class);
         Route::resource('categories', CategoriesController::class);
         Route::resource('tags', TagsController::class);

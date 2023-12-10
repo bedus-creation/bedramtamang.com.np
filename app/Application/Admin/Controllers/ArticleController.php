@@ -5,7 +5,6 @@ namespace App\Application\Admin\Controllers;
 use Aammui\LaravelTaggable\Models\Category;
 use Aammui\LaravelTaggable\Models\Tag;
 use App\Application\Admin\Requests\ArticleStoreRequest;
-use App\Domain\CMS\Models\Article;
 use App\Domain\CMS\Models\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
@@ -90,9 +89,9 @@ class ArticleController extends Controller
      *
      * @param Request $request
      * @param int $id
-     * @return void
+     * @return RedirectResponse
      */
-    public function destroy(Request $request, $id)
+    public function destroy(Request $request, $id): RedirectResponse
     {
         $article = $this->repository->findOrFail($id);
         $article->delete();

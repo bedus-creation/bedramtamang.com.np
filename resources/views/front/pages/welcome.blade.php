@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container mx-auto py-2 my-4 md:px-20 px-6">
-        <div class="w-full lg:flex justify-around mb-4 px-0 lg:px-40">
-            <div class="text-base text-gray-700 w-full lg:w-2/3 mb-4 lg:mb-0">
+        <div class="grid grid-cols-4 lg:gap-4 justify-around mb-4 px-0 lg:px-40">
+            <div class="text-base text-gray-700 w-full col-span-4 lg:col-span-3 mb-4 lg:mb-0">
                 I am <a class="font-bold underline" target="_blank" href="https://twitter.com/tmg_bedus">Bedram Tamang</a>, a fullstack Software Engineer,
                 specialize in Laravel, Vuejs, Tailwind, SQL, PHP, Python, with more than six years of professional experience.
                 <br>
@@ -16,7 +16,7 @@
                     Electronics and Communication Engineering.
                 </a>
             </div>
-            <div class="w-full lg:w-1/3">
+            <div class="col-span-4 lg:col-span-1">
                 <img class="rounded w-full" src="{{url('/assets/img/bedram-tamang.png')}}" alt="Image of Bedram Tamang at Waterfront, Vancouver, BC, Canada">
             </div>
         </div>
