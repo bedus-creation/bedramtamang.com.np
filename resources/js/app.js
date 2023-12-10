@@ -1,4 +1,5 @@
 import { createApp, h } from 'vue'
+import "../css/app.css"
 import { createInertiaApp } from '@inertiajs/vue3'
 import "@/utils/flash.js"
 

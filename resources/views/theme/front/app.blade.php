@@ -1,7 +1,3 @@
-@php
-    use Illuminate\Support\Facades\Vite;
-@endphp
-
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -11,26 +7,21 @@
     <title>@yield('title','Bedram Tamang | Software Engineer In Vancouver, Canada.')</title>
     <meta name="csrf-token" content="{{csrf_token()}}">
     <meta name="keywords"
-        content="Bedram Tamang,Software Engineer in Vancouver, BC, Canada, Full-stack, Developer Laravel, Vue, Tailwind, MySQL, PHP, Python " />
-    <meta name="author" content="" />
-    <meta name="description" content="" />
+          content="Bedram Tamang,Software Engineer in Vancouver, BC, Canada, Full-stack, Developer Laravel, Vue, Tailwind, MySQL, PHP, Python "/>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;500;700&family=Source+Code+Pro&display=swap"
-        rel="stylesheet">
-    <style>
-        {!! Vite::content('resources/css/app.css') !!}
-    </style>
-    <script>
-        {!! Vite::content('resources/js/app.js') !!}
-    </script>
+          rel="stylesheet">
+    @vite('resources/js/vue.js', 'build/front')
 </head>
 
 <body>
-    <div class="bg-gray-100" id="app">
-        @include('front.components.header')
-        @yield('content')
-        @include('front.components.footer')
-    </div>
-    @yield('scripts')
+<div class="bg-gray-100" id="app">
+    @include('front.components.header')
+    @yield('content')
+    @include('front.components.footer')
+</div>
+@yield('scripts')
 </body>
 
 </html>

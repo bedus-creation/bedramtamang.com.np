@@ -2,7 +2,9 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "front:dev": "vite --config vite.front.config.js",
+        "front:build": "vite build --config vite.front.config.js"
     },
     "devDependencies": {
         "axios": "^1.1.2",
