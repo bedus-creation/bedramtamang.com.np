@@ -1,0 +1,10 @@
+{
+  "resources/js/vue.js": {
+    "css": [
+      "assets/vue-SPJ6danW.css"
+    ],
+    "file": "assets/vue-NQAZp9cv.js",
+    "isEntry": true,
+    "src": "resources/js/vue.js"
+  }
+}
