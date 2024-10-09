@@ -12,11 +12,13 @@
     <meta name="description" content=""/>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;500;700&family=Source+Code+Pro&display=swap"
           rel="stylesheet">
+    @yield('head')
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github-gist.min.css">
     @vite('resources/js/vue.js', 'build/front')
 </head>
 
 <body>
-<div class="bg-gray-100" id="app">
+<div class="" id="app">
     @include('front.components.header')
     @yield('content')
     @include('front.components.footer')

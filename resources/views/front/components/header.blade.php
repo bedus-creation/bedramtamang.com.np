@@ -1,4 +1,4 @@
-<div class="bg-white md:shadow-outline">
+<div class="bg-white border-b-2 border-red-500  md:shadow-outline">
     <div class="container mx-auto md:px-20 px-6">
         <div class="flex justify-between whitespace-nowrap overflow-x-auto overflow-y-hidden py-2">
             <a href="{{url('/')}}" class="flex items-center">
@@ -16,11 +16,11 @@
                     </a>
                 </div>
                 <div class="px-3 py-3"><a href="/blogs">Blog</a></div>
-                <div class="px-3 py-3">Services</div>
-                <div class="px-3 py-3">Works</div>
                 <div class="px-3 py-3"><a href="/open-source">Open Source</div>
                 <div class="pl-3 py-3">
-                    <a href="/about-me-bedram-tamang" class="bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded-full font-hairline">
+                    <a target="_blank"
+                       style="background: #c21500;background: -webkit-linear-gradient(to right, #c21500, #ffc500); background: linear-gradient(to left, #c21500, #ffc500);"
+                       href="https://www.linkedin.com/in/bedram-tamang/" class="text-white font-bold py-2 px-8 rounded-full font-hairline">
                         About Me
                     </a>
                 </div>

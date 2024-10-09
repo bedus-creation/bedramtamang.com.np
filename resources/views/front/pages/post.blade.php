@@ -41,15 +41,16 @@
                         {!! markdownToHtml($post->body) !!}
                     </div>
                     <hr>
-                    <div id="disqus_thread"></div>
                 </div>
+            </div>
+            <div class="mx-auto md:w-3/5">
+                <div id="disqus_thread"></div>
             </div>
         </div>
     </section>
 @endsection
 
 @section('scripts')
-    <link rel="stylesheet" href="/css/user_input.css">
     <script>
         var disqus_config = function() {
             this.page.url = PAGE_URL // Replace PAGE_URL with your page's canonical URL variable
@@ -70,14 +71,12 @@
                                                    Disqus.
         </a>
     </noscript>
-    <link rel="stylesheet" href="/lib/highlight/styles/github-gist.css">
-    <script src="/lib/highlight/highlight.pack.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", (event) => {
             document.querySelectorAll("pre code").forEach((block) => {
                 hljs.highlightBlock(block)
             })
         })
-
     </script>
 @endsection
