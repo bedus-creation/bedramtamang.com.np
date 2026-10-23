@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f123b7ddec3844b89a21495dd28e0a3",
+    "content-hash": "fa843d69fd41a6fb2c2581e10d77089a",
     "packages": [
         {
             "name": "aammui/laravel-media",
-            "version": "dev-feature/laravel-13",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tmgbedu/laravel-media.git",
-                "reference": "bad4aec2aab3a26cc4aceebc239d137a37f5e4f1"
+                "reference": "457d5514aa257ade069b6c49c8d46b7ed28c95c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tmgbedu/laravel-media/zipball/bad4aec2aab3a26cc4aceebc239d137a37f5e4f1",
-                "reference": "bad4aec2aab3a26cc4aceebc239d137a37f5e4f1",
+                "url": "https://api.github.com/repos/tmgbedu/laravel-media/zipball/457d5514aa257ade069b6c49c8d46b7ed28c95c7",
+                "reference": "457d5514aa257ade069b6c49c8d46b7ed28c95c7",
                 "shasum": ""
             },
             "require": {
@@ -46,11 +46,7 @@
                     "Aammui\\LaravelMedia\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Aammui\\LaravelMedia\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -69,23 +65,23 @@
                 "media-uploader"
             ],
             "support": {
-                "source": "https://github.com/tmgbedu/laravel-media/tree/feature/laravel-13",
-                "issues": "https://github.com/tmgbedu/laravel-media/issues"
+                "issues": "https://github.com/tmgbedu/laravel-media/issues",
+                "source": "https://github.com/tmgbedu/laravel-media/tree/v4.0.0"
             },
-            "time": "2026-10-23T03:02:39+00:00"
+            "time": "2026-10-23T03:08:31+00:00"
         },
         {
             "name": "aammui/laravel-taggable",
-            "version": "dev-feature/laravel-13",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tmgbedu/LaravelTaggable.git",
-                "reference": "9e6cfc5103bb4487b3838159266f08fef9980d6a"
+                "reference": "4247ebde34462e1f011c605106ce24b7fd583f21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tmgbedu/LaravelTaggable/zipball/9e6cfc5103bb4487b3838159266f08fef9980d6a",
-                "reference": "9e6cfc5103bb4487b3838159266f08fef9980d6a",
+                "url": "https://api.github.com/repos/tmgbedu/LaravelTaggable/zipball/4247ebde34462e1f011c605106ce24b7fd583f21",
+                "reference": "4247ebde34462e1f011c605106ce24b7fd583f21",
                 "shasum": ""
             },
             "require": {
@@ -110,11 +106,7 @@
                     "Aammui\\LaravelTaggable\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Aammui\\LaravelTaggable\\Tests\\": "tests"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -126,23 +118,23 @@
             ],
             "description": "Assign Category and Tags to a model",
             "support": {
-                "source": "https://github.com/tmgbedu/LaravelTaggable/tree/feature/laravel-13",
-                "issues": "https://github.com/tmgbedu/LaravelTaggable/issues"
+                "issues": "https://github.com/tmgbedu/LaravelTaggable/issues",
+                "source": "https://github.com/tmgbedu/LaravelTaggable/tree/3.1.0"
             },
-            "time": "2026-10-23T03:02:40+00:00"
+            "time": "2026-10-23T03:08:34+00:00"
         },
         {
             "name": "aammui/role-permission",
-            "version": "dev-feature/laravel-13",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tmgbedu/role-permission.git",
-                "reference": "96aa8f9a3f4917e39b0dd9cad822fe3413f0a939"
+                "reference": "3e15980516af5fe39f129af4411d407ac929e1bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tmgbedu/role-permission/zipball/96aa8f9a3f4917e39b0dd9cad822fe3413f0a939",
-                "reference": "96aa8f9a3f4917e39b0dd9cad822fe3413f0a939",
+                "url": "https://api.github.com/repos/tmgbedu/role-permission/zipball/3e15980516af5fe39f129af4411d407ac929e1bf",
+                "reference": "3e15980516af5fe39f129af4411d407ac929e1bf",
                 "shasum": ""
             },
             "require": {
@@ -169,25 +161,7 @@
                     "Aammui\\RolePermission\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Aammui\\RolePermission\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "psalm": [
-                    "vendor/bin/psalm"
-                ],
-                "test": [
-                    "./vendor/bin/testbench package:test --parallel --no-coverage"
-                ],
-                "test-coverage": [
-                    "vendor/bin/phpunit --coverage-html coverage"
-                ],
-                "format": [
-                    "vendor/bin/php-cs-fixer fix --allow-risky=yes"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -199,10 +173,10 @@
             ],
             "description": "Role permission system for laravel",
             "support": {
-                "source": "https://github.com/tmgbedu/role-permission/tree/feature/laravel-13",
-                "issues": "https://github.com/tmgbedu/role-permission/issues"
+                "issues": "https://github.com/tmgbedu/role-permission/issues",
+                "source": "https://github.com/tmgbedu/role-permission/tree/3.2.0"
             },
-            "time": "2026-10-23T03:02:41+00:00"
+            "time": "2026-10-23T03:08:37+00:00"
         },
         {
             "name": "brick/math",
@@ -9595,32 +9569,9 @@
             "time": "2025-12-08T11:19:18+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "aammui/laravel-media",
-            "version": "dev-feature/laravel-13",
-            "alias": "4.0.0",
-            "alias_normalized": "4.0.0.0"
-        },
-        {
-            "package": "aammui/laravel-taggable",
-            "version": "dev-feature/laravel-13",
-            "alias": "3.1.0",
-            "alias_normalized": "3.1.0.0"
-        },
-        {
-            "package": "aammui/role-permission",
-            "version": "dev-feature/laravel-13",
-            "alias": "3.2.0",
-            "alias_normalized": "3.2.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "aammui/laravel-media": 20,
-        "aammui/laravel-taggable": 20,
-        "aammui/role-permission": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
