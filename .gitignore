@@ -1,5 +1,8 @@
 /node_modules
 /public/hot
+/public/build
+/public/css/tailwind.css
+/public/css/user_input.css
 /public/storage
 /storage/*.key
 /vendor

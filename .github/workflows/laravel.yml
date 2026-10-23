@@ -19,6 +19,17 @@ jobs:
         extensions: gd, pdo_sqlite, sqlite3, mbstring, intl
         ini-values: error_reporting=E_ALL
         coverage: none
+    # Feature tests render Blade views that call @vite, which needs the built manifests.
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: '24'
+        cache: yarn
+    - name: Build frontend assets
+      run: |
+        yarn install --frozen-lockfile
+        yarn build
+        yarn front:build
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
@@ -59,5 +70,3 @@ jobs:
       run: yarn build
     - name: Build front assets
       run: yarn front:build
-    - name: Check committed public/build is up to date
-      run: git diff --exit-code --stat public/build
