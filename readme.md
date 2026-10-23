@@ -10,7 +10,12 @@ Install Envoy globally (it is not a project dependency):
 composer global require laravel/envoy
 ```
 
-Configure the target in your local `.env` or as shell environment variables (shell values win):
+Configure the target in your local `.env` or as shell environment variables (shell values win).
+The local `.env` is only read when `vendor/` exists, so run `composer install` first. Without it, export the variables in your shell:
+
+```bash
+export DEPLOY_HOST=user@your-server-ip DEPLOY_PATH=/home/forge/your-site
+```
 
 | Variable            | Default                    | Description                                       |
 |---------------------|----------------------------|---------------------------------------------------|
@@ -34,6 +39,7 @@ envoy run health   # current commit and Laravel version on the server
 Notes:
 
 - `deploy` checks that `DEPLOY_PATH` holds a Laravel app with a `.env` before taking anything down.
-- The server has no global yarn. Both bundles (`build` → `public/build/admin`, `front:build` → `public/build/front`) are built on the server with `corepack yarn`, which comes with Node.
+- Both bundles (`build` → `public/build/admin`, `front:build` → `public/build/front`) are built on the server on every deploy with `corepack yarn`, which comes with Node, so no global yarn is needed. `public/build` is not committed.
 - If a step fails, the app is brought back up (`artisan up`) and the deploy stops. Fix the issue and re-run `envoy run deploy`.
   Don't pass `--continue` to `deploy`, since it continues past failed steps.
+- If `build-assets` fails, the site comes back up with the previous build. On the first deploy after `public/build` stopped being tracked, there is no previous build, so pages will be missing their assets until a deploy succeeds.
