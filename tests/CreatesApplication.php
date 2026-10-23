@@ -29,7 +29,7 @@ trait CreatesApplication
      * @param array|string $key
      * @return array
      */
-    public function resetData($data = [], $key): array
+    public function resetData(array $data, $key): array
     {
         if (is_array($key)) {
             $data = array_merge($data, $key);

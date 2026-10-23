@@ -3,6 +3,8 @@
 namespace Tests\Feature\User;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\Authenticate;
 use Tests\TestCase;
 
@@ -18,11 +20,8 @@ class RoleTest extends TestCase
         $this->authenticate();
     }
 
-    /**
-     * @test
-     *
-     * @dataProvider role200StatusRoutes()
-     */
+    #[Test]
+    #[DataProvider('role200StatusRoutes')]
     public function roleRoutes200StatusTest($route, $status)
     {
         $this->get($route)
