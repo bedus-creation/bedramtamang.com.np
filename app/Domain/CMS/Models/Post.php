@@ -39,7 +39,7 @@ class Post extends Model
         /** @var Media $media */
         $media = $this->fromCollection('cover')->getMedia()->first();
 
-        $link = json_decode($media?->in_json, true);
+        $link = $media ? json_decode($media->in_json, true) : null;
 
         if (isset($link['url']['lg'])) {
             $path = $link['url']['lg'];
