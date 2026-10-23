@@ -14,9 +14,9 @@
     <url>
         <loc>{{url($item->link())}}</loc>
         <lastmod>{{$item->updated_at->format('Y-m-d')}}T{{$item->updated_at->format('h:i:s')}}+05:45</lastmod>
-        @if($item->media)
+        @if($item->media->isNotEmpty())
         <image:image>
-            <image:loc>{{$item->cover}}</image:loc>
+            <image:loc>{{$item->cover()}}</image:loc>
             <image:caption>{{$item->title}}</image:caption>
         </image:image>
         @endif

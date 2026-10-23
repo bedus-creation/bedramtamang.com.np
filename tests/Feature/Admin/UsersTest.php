@@ -9,6 +9,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Arr;
 use Tests\Authenticate;
 use Tests\Feature\Admin\Traits\UserDataTrait;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class UsersTest extends TestCase
@@ -25,21 +26,21 @@ class UsersTest extends TestCase
         $this->authenticate();
     }
 
-    /** @test */
+    #[Test]
     public function users_can_index()
     {
         $this->get(route('users.index'))
             ->assertStatus(200);
     }
 
-    /** @test */
+    #[Test]
     public function users_form_is_access_to_all()
     {
         $this->get(route('users.create'))
             ->assertStatus(200);
     }
 
-    /** @test */
+    #[Test]
     public function admin_can_create_users()
     {
         $data = $this->getFormData();
