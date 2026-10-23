@@ -13,16 +13,13 @@ return [
     | using this caching library. This connection is used when another is
     | not explicitly specified when executing a given caching function.
     |
-<<<<<<< HEAD
-    | Supported: "apc", "array", "database", "file", "memcached", "redis"
-=======
     | Supported: "apc", "array", "database", "file",
     |            "memcached", "redis", "dynamodb"
->>>>>>> 89b8f88997daca671f32d4db2d12a13064c62211
     |
     */
 
-    'default' => env('CACHE_DRIVER', 'file'),
+    // CACHE_STORE is the Laravel 11+ name; CACHE_DRIVER is still read so existing .env files keep working.
+    'default' => env('CACHE_STORE', env('CACHE_DRIVER', 'file')),
 
     /*
     |--------------------------------------------------------------------------
@@ -104,5 +101,17 @@ return [
     */
 
     'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_cache'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Serializable Classes
+    |--------------------------------------------------------------------------
+    |
+    | Classes allowed to be unserialized from the cache. The app caches no PHP
+    | objects, so none are allowed (hardens against gadget chain attacks).
+    |
+    */
+
+    'serializable_classes' => false,
 
 ];
