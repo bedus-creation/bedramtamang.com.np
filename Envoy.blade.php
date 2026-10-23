@@ -18,6 +18,7 @@
     $repo = $env('DEPLOY_REPO', trim((string) shell_exec('git -C '.escapeshellarg(__DIR__).' remote get-url origin 2>/dev/null')));
     $php = $env('DEPLOY_PHP', 'php8.5');
     $reloadFpm = filter_var($env('DEPLOY_RELOAD_FPM', 'false'), FILTER_VALIDATE_BOOLEAN);
+    $restartQueue = filter_var($env('DEPLOY_RESTART_QUEUE', 'false'), FILTER_VALIDATE_BOOLEAN);
 
     // The server's CLI default PHP may differ from $php, so composer is run through $php explicitly.
     $composer = "{$php} \"\$(command -v composer)\"";
@@ -118,7 +119,11 @@
     set -e
     cd "{{ $path }}"
     trap '{{ $php }} artisan up' ERR
-    {{ $php }} artisan queue:restart
+    @if ($restartQueue)
+        {{ $php }} artisan queue:restart
+    @else
+        echo "Skipping queue:restart (set DEPLOY_RESTART_QUEUE=true to enable)."
+    @endif
 @endtask
 
 @task('reload-fpm')

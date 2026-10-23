@@ -25,6 +25,7 @@ export DEPLOY_HOST=user@your-server-ip DEPLOY_PATH=/home/forge/your-site
 | `DEPLOY_REPO`       | local `origin` remote URL  | Repository cloned by `init`                       |
 | `DEPLOY_PHP`        | `php8.5`                   | PHP binary for artisan and composer               |
 | `DEPLOY_RELOAD_FPM` | `false`                    | `true` reloads `<DEPLOY_PHP>-fpm` via `sudo`      |
+| `DEPLOY_RESTART_QUEUE` | `false`                 | `true` runs `artisan queue:restart`. Enable it once jobs run on a queue worker (the app currently uses `QUEUE_CONNECTION=sync`) |
 
 Envoy stops with an error if `DEPLOY_HOST` or `DEPLOY_PATH` is missing.
 
@@ -32,7 +33,7 @@ Run:
 
 ```bash
 envoy run init     # first time only: clones the repo into DEPLOY_PATH (refuses if it exists)
-envoy run deploy   # down → pull → composer → yarn build + front:build → migrate → cache → queue:restart → [fpm reload] → up
+envoy run deploy   # down → pull → composer → yarn build + front:build → migrate → cache → [queue:restart] → [fpm reload] → up
 envoy run health   # current commit and Laravel version on the server
 ```
 
