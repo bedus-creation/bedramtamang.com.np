@@ -20,6 +20,17 @@ jobs:
         extensions: gd, pdo_sqlite, sqlite3, mbstring, intl
         ini-values: error_reporting=E_ALL
         coverage: none
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: '24'
+        cache: yarn
+    - name: Install frontend dependencies
+      run: yarn install --frozen-lockfile
+    - name: Build admin assets
+      run: yarn build
+    - name: Build front assets
+      run: yarn front:build
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
